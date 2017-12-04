@@ -10,6 +10,7 @@ import { MyDirectiveDirective } from './directive/my-directive.directive';
 import { PowPipePipe } from './pow-pipe.pipe';
 import { CarFilterPipe } from './car-filter.pipe';
 import {CarsService} from './cars.service';
+import {ConsoleService} from './console.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import {CarsService} from './cars.service';
     BrowserModule,
     FormsModule
   ],
-  providers: [CarsService],
+  providers: [CarsService, ConsoleService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
