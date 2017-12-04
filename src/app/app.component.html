@@ -40,11 +40,15 @@
     <!--<p>{{money | currency:'EUR'}}</p>-->
     <!--<hr>-->
     <!-- Date -->
-    <p>{{date | date:'fulDate'}}</p>
-    <p>{{date | date:'shortDate'}}</p>
-    <p>{{date | date:'shortTime'}}</p>
-    <p>{{amount | percent}}</p>
-    <pre>{{obj | json }}</pre>
+    <!--<p>{{date | date:'fulDate'}}</p>-->
+    <!--<p>{{date | date:'shortDate'}}</p>-->
+    <!--<p>{{date | date:'shortTime'}}</p>-->
+    <!--<p>{{amount | percent}}</p>-->
+    <!--<pre>{{obj | json }}</pre>-->
+    <input type="text" [(ngModel)]="searchCar">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let car of cars | carFilter:searchCar; let idx = index"><b>{{idx + 1}}</b> {{car.name}}</li>
+    </ul>
 
 
   </div>
