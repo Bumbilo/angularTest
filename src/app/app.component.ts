@@ -1,4 +1,6 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
+import 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-root',
@@ -29,20 +31,56 @@ export class AppComponent {
   };
 
   cars = [
-    {name: 'Lada'},
-    {name: 'Porshe'},
-    {name: 'BMW'},
-    {name: 'Mustang'},
-    {name: 'Brabus'},
-    {name: 'Tesla'}
+    {
+      name: 'Lada',
+      descr: 'lorem',
+      year: 2012,
+    },
+    {
+      name: 'Porshe',
+      descr: '123',
+      year: 2012,
+    },
+    {
+      name: 'BMW',
+      descr: '1234124124',
+      year: 2012,
+    },
+    {
+      name: 'Mustang',
+      descr: 'ABCDC',
+      year: 2012,
+    },
+    {
+      name: 'Brabus',
+      descr: 'lkjlkasjdfasd1234',
+      year: 2012,
+    },
+    {
+      name: 'Tesla',
+      descr: 'asldkgjas2342',
+      year: 2012,
+    }
   ];
 
+  addCar() {
+    this.cars.push({
+      name: 'new car',
+      descr: 'WFM'
+    });
+  }
+
+  asyncTitle = Observable.of('Async titile 3seconds')
+    .delay(3000)
+
   items = [1, 2, 3, 4, 5];
+
   current = 1;
 
   onClick(item: number) {
     this.current = item;
   }
+
 
 
 

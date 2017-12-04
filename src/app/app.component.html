@@ -24,32 +24,38 @@
 <!-- Pipe -->
 <div class="container">
   <div class="col-xs-8 col-xs-offset2">
-    <!--String-->
-    <!--<p>{{title2}}</p>-->
-    <!--<p>{{title2 | lowercase}}</p>-->
-    <!--<p>{{title2 | uppercase}}</p>-->
-    <!--<p>{{title2 | slice:0:3 }}</p>-->
-    <!--<p>{{title2 | slice:3:6 | uppercase }}</p>-->
-    <!--<hr>-->
+    <!--<h1>{{asyncTitle | async}}</h1>-->
+    <!--&lt;!&ndash;String&ndash;&gt;-->
+    <!--&lt;!&ndash;<p>{{title2}}</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;<p>{{title2 | lowercase}}</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;<p>{{title2 | uppercase}}</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;<p>{{title2 | slice:0:3 }}</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;<p>{{title2 | slice:3:6 | uppercase }}</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;<hr>&ndash;&gt;-->
 
-    <!--&lt;!&ndash;Number&ndash;&gt;-->
-    <!--<p>{{pi}}</p>-->
-    <!--<p>{{pi | number}}</p>-->
-    <!--<p>{{pi | number:'1.3-4'}}</p>-->
-    <!--<p>{{pi | number:'2.2-2'}}</p>-->
-    <!--<p>{{money | currency:'EUR'}}</p>-->
-    <!--<hr>-->
-    <!-- Date -->
-    <!--<p>{{date | date:'fulDate'}}</p>-->
-    <!--<p>{{date | date:'shortDate'}}</p>-->
-    <!--<p>{{date | date:'shortTime'}}</p>-->
-    <!--<p>{{amount | percent}}</p>-->
-    <!--<pre>{{obj | json }}</pre>-->
-    <input type="text" [(ngModel)]="searchCar">
+    <!--&lt;!&ndash;&lt;!&ndash;Number&ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;<p>{{pi}}</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;<p>{{pi | number}}</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;<p>{{pi | number:'1.3-4'}}</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;<p>{{pi | number:'2.2-2'}}</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;<p>{{money | currency:'EUR'}}</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;<hr>&ndash;&gt;-->
+    <!--&lt;!&ndash; Date &ndash;&gt;-->
+    <!--&lt;!&ndash;<p>{{date | date:'fulDate'}}</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;<p>{{date | date:'shortDate'}}</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;<p>{{date | date:'shortTime'}}</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;<p>{{amount | percent}}</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;<pre>{{obj | json }}</pre>&ndash;&gt;-->
+    <!--&lt;!&ndash;<input type="text" [(ngModel)]="searchCar">&ndash;&gt;-->
+    <!--&lt;!&ndash;<button class="btn btn-primary" (click)="addCar()">Add</button>&ndash;&gt;-->
+    <!--&lt;!&ndash;<ul class="list-group">&ndash;&gt;-->
+      <!--&lt;!&ndash;<li class="list-group-item" *ngFor="let car of cars | carFilter:searchCar:'descr'; let idx = index"><b>{{idx + 1}}</b> {{car.name}}{{car.descr}}</li>&ndash;&gt;-->
+    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+<app-add-car></app-add-car>
     <ul class="list-group">
-      <li class="list-group-item" *ngFor="let car of cars | carFilter:searchCar; let idx = index"><b>{{idx + 1}}</b> {{car.name}}</li>
+      <app-car class="list-group-item" *ngFor="let car of cars" [carItem]="car"></app-car>
     </ul>
-
 
   </div>
 </div>
+
