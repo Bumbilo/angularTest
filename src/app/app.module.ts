@@ -1,15 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { CarsComponent } from './cars/cars.component';
 import { CarComponent } from './car/car.component';
+import { CarsComponent } from './cars/cars.component';
 import { AddCarComponent } from './add-car/add-car.component';
-import {BackgroundDirective} from './directive/background.directive';
+import { BackgroundDirective } from './directive/background.directive';
 import { MyDirectiveDirective } from './directive/my-directive.directive';
-import {PowPipe} from './pow.pipe';
-import { NewPipePipe } from './new-pipe.pipe';
-
+import { PowPipePipe } from './pow-pipe.pipe';
+import { CarFilterPipe } from './car-filter.pipe';
+import { CarsService } from './cars.service';
+import {ConsoleService} from './console.service';
+import { FomrsComponent } from './fomrs/fomrs.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,16 @@ import { NewPipePipe } from './new-pipe.pipe';
     AddCarComponent,
     BackgroundDirective,
     MyDirectiveDirective,
-    PowPipe,
-    NewPipePipe
+    PowPipePipe,
+    CarFilterPipe,
+    FomrsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [CarsService, ConsoleService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
+

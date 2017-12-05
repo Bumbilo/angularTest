@@ -1,44 +1,20 @@
-import { Component } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {CarsService} from './cars.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  title = 'Создание директивы !!!';
-  title2 = 'WebForMySelf';
-  pi = Math.PI;
-  money = 350;
-  date = new Date();
-  amount = 0.45;
-  obj = {
-    first_name: 'Dima',
-    last_name: 'Holiak',
-    nested: {
-      birthday: new Date(),
-      eyesColor: 'brown'
-    }
-  };
+export class AppComponent implements OnInit {
 
-  pow = 2;
+  cars = [];
 
-  items = [1, 2, 3, 4, 5];
-  current = 1;
-
-  searchCar = '';
-
-  cars: [{ name: string, year: number }] = [
-    {name: 'Ford', year: 2015},
-    {name: 'Audi', year: 2010},
-    {name: 'Toyota', year: 2012},
-    {name: 'BMw', year: 2017},
-    {name: 'Mustang', year: 2012},
-    {name: 'Lada', year: 2015},
-    {name: 'Bently', year: 2014}
-  ];
-
-  onClick(item: number) {
-   this.current = item;
+  constructor(private service: CarsService) {
   }
+
+  ngOnInit() {
+    this.cars = this.service.cars;
+  }
+
 }

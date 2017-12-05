@@ -4,8 +4,8 @@ import {Directive, ElementRef, HostBinding, HostListener, Input, OnInit, Rendere
   selector: '[appBackground]'
 })
 export class BackgroundDirective implements OnInit {
-  @Input() hoverColor: string = 'green';
-  @Input() defaultColor: string = 'transparent';
+  @Input() hoverColor = 'green';
+  @Input() defaultColor = 'transparent';
 
   @HostBinding('style.backgroundColor') background: string;
 
