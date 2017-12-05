@@ -21,9 +21,22 @@ export class AppComponent {
     }
   };
 
+  pow = 2;
 
   items = [1, 2, 3, 4, 5];
   current = 1;
+
+  searchCar = '';
+
+  cars: [{ name: string, year: number }] = [
+    {name: 'Ford', year: 2015},
+    {name: 'Audi', year: 2010},
+    {name: 'Toyota', year: 2012},
+    {name: 'BMw', year: 2017},
+    {name: 'Mustang', year: 2012},
+    {name: 'Lada', year: 2015},
+    {name: 'Bently', year: 2014}
+  ];
 
   onClick(item: number) {
    this.current = item;

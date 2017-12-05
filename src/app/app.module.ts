@@ -7,6 +7,8 @@ import { CarComponent } from './car/car.component';
 import { AddCarComponent } from './add-car/add-car.component';
 import {BackgroundDirective} from './directive/background.directive';
 import { MyDirectiveDirective } from './directive/my-directive.directive';
+import {PowPipe} from './pow.pipe';
+import { NewPipePipe } from './new-pipe.pipe';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { MyDirectiveDirective } from './directive/my-directive.directive';
     CarComponent,
     AddCarComponent,
     BackgroundDirective,
-    MyDirectiveDirective
+    MyDirectiveDirective,
+    PowPipe,
+    NewPipePipe
   ],
   imports: [
     BrowserModule
