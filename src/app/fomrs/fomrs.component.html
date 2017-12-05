@@ -1,0 +1,72 @@
+<div class="col-xs-8 col-xs-offset-2">
+  <form (ngSubmit)="onSendForm(form)" #form="ngForm">
+    <div class="form-group" [ngClass]="{'has-error': first_name.invalid && first_name.touched}">
+      <label>First name</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="First name"
+        ngModel
+        name="first_name"
+        #first_name="ngModel"
+        required
+      >
+    </div>
+    <div class="form-group">
+      <label>Last name</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Last name"
+        ngModel
+        name="last_name"
+        required
+      >
+    </div>
+    <div class="form-group " [ngClass]="{'has-danger': email.invalid && email.touched}">
+      <label>Email</label>
+      <input
+        type="email"
+        class="form-control"
+        placeholder="Email"
+        ngModel
+        name="email"
+        required
+        #email="ngModel"
+        email
+      >
+      <p *ngIf="email.invalid && email.touched">Введите корректный email</p>
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Password"
+        ngModel
+        name="password"
+      >
+    </div>
+    <div class="form-group">
+      <div class="radio" *ngFor="let count of country">
+        <label [for]="count.shortName">{{count.name}}</label>
+        <input
+          type="radio"
+          [id]="count.shortName"
+          [value]="count.shortName"
+          ngModel
+          name="country"
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="!form.valid"
+      >Send form
+      </button>
+    </div>
+  </form>
+</div>
+

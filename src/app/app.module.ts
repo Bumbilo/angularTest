@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CarComponent } from './car/car.component';
 import { CarsComponent } from './cars/cars.component';
@@ -9,8 +9,9 @@ import { BackgroundDirective } from './directive/background.directive';
 import { MyDirectiveDirective } from './directive/my-directive.directive';
 import { PowPipePipe } from './pow-pipe.pipe';
 import { CarFilterPipe } from './car-filter.pipe';
-import {CarsService} from './cars.service';
+import { CarsService } from './cars.service';
 import {ConsoleService} from './console.service';
+import { FomrsComponent } from './fomrs/fomrs.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {ConsoleService} from './console.service';
     BackgroundDirective,
     MyDirectiveDirective,
     PowPipePipe,
-    CarFilterPipe
+    CarFilterPipe,
+    FomrsComponent
   ],
   imports: [
     BrowserModule,
