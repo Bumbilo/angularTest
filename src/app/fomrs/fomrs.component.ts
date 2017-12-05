@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-fomrs',
@@ -8,7 +8,8 @@ import { NgForm } from '@angular/forms';
 })
 export class FomrsComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
@@ -17,6 +18,13 @@ export class FomrsComponent implements OnInit {
     {name: 'Russia', shortName: 'rus'},
     {name: 'Ukraine', shortName: 'ua'},
     {name: 'Belorusia', shortName: 'bel'},
+  ];
+
+  defaultCountry = 'ua';
+
+  sex = [
+    {gender: 'male'},
+    {gender: 'flame'}
   ];
 
   onSendForm(value: HTMLFormElement) {
