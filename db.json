@@ -1,33 +1,23 @@
 {
   "cars": [
     {
-      "name": "Lada",
-      "isSold": "false",
-      "color": "white",
+      "color": "red",
       "id": 1
     },
     {
-      "name": "Porshe",
-      "isSold": "true",
-      "color": "white",
+      "color": "green",
       "id": 2
     },
     {
-      "name": "BMW",
-      "isSold": "false",
       "color": "green",
       "id": 3
     },
     {
-      "name": "Mustang",
-      "isSold": "false",
-      "color": "yellow",
+      "color": "blue",
       "id": 5
     },
     {
-      "name": "Brabus",
-      "isSold": "false",
-      "color": "green",
+      "color": "red",
       "id": 7
     },
     {
@@ -55,6 +45,11 @@
       "name": "Audi",
       "color": "blue",
       "id": 13
+    },
+    {
+      "name": "",
+      "color": "blue",
+      "id": 14
     }
   ]
 }
