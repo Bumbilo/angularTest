@@ -1,10 +1,27 @@
-<div class="container">
-  <div class="col-xs-8 col-xs-offset2">
-    <app-fomrs></app-fomrs>
-    <!--<app-add-car ></app-add-car>-->
-    <!--<ul class="list-group">-->
-      <!--<app-car *ngFor="let car of cars" [carItem]="car"  ></app-car>-->
-    <!--</ul>-->
-  </div>
-</div>
+<!--<div class="container">-->
+  <!--<div class="col-xs-8 col-xs-offset2">-->
+    <!--&lt;!&ndash;<button class="btn btn-primary" (click)="loadCars()">Add cars</button>&ndash;&gt;-->
+    <!--&lt;!&ndash;<hr/>&ndash;&gt;-->
+    <!--&lt;!&ndash;<ul>&ndash;&gt;-->
+      <!--&lt;!&ndash;<li *ngFor="let car of cars">{{car.name}}</li>&ndash;&gt;-->
+    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+    <!--&lt;!&ndash;<app-fomrs></app-fomrs>&ndash;&gt;-->
+    <!--&lt;!&ndash;<app-add-car ></app-add-car>&ndash;&gt;-->
+    <!--&lt;!&ndash;<ul class="list-group">&ndash;&gt;-->
+      <!--&lt;!&ndash;<app-car *ngFor="let car of cars" [carItem]="car"  ></app-car>&ndash;&gt;-->
+    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+  <!--</div>-->
+<!--</div>-->
 
+<div class="col-xs-8 col-xs-offset-2">
+  <input type="text" class="form-control" [(ngModel)]="carName">
+  <hr>
+  <button class="btn btn-primary" (click)="loadCars()">Загрузить машины</button>
+  <button class="btn btn-success" (click)="addCars()">Добавить машину</button>
+  <hr>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let car of cars">
+      <span class="badge">{{car.id}}</span> {{car.name}} ({{car.color}})
+    </li>
+  </ul>
+</div>

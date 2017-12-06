@@ -1,42 +1,25 @@
-import {ConsoleService} from './console.service';
 import {Injectable} from '@angular/core';
+import {Http, Response} from '@angular/http';
 
 @Injectable()
 export class CarsService {
-
-  constructor(private consoleService: ConsoleService) {
-
+  constructor(private http: Http) {
   }
 
-  cars = [
-    {
-      name: 'Lada',
-      isSold: false,
-    },
-    {
-      name: 'Porshe',
-      isSold: true,
-    },
-    {
-      name: 'BMW',
-      isSold: false,
-    },
-    {
-      name: 'Mustang',
-      isSold: false,
-    },
-    {
-      name: 'Brabus',
-      isSold: false,
-    },
-    {
-      name: 'Tesla',
-      isSold: false,
-    }
-  ];
+  getCars() {
+    return this.http
+      .get('http://localhost:3000/cars')
+      .map((response: Response) => response.json());
+  }
 
-  addCar(name: string) {
-    this.cars.push({name, isSold: false});
-    this.consoleService.log(`Car ${name} was added !!!`);
+  addCar(carName: string) {
+    const data = {
+      name: carName,
+      color: 'blue',
+    };
+
+    return this.http
+      .post('http://localhost:3000/cars', data)
+      .map((response: Response) => response.json());
   }
 }

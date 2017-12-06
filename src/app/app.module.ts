@@ -12,6 +12,7 @@ import { CarFilterPipe } from './car-filter.pipe';
 import { CarsService } from './cars.service';
 import {ConsoleService} from './console.service';
 import { FomrsComponent } from './fomrs/fomrs.component';
+import {HttpModule} from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FomrsComponent } from './fomrs/fomrs.component';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [CarsService, ConsoleService],
   bootstrap: [AppComponent]
