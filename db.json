@@ -26,5 +26,8 @@
       "color": "red",
       "id": 13
     }
-  ]
+  ],
+  "title": {
+    "value": "Car manager"
+  }
 }

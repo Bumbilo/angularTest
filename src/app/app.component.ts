@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {CarsService} from './cars.service';
 
 interface Cars {
@@ -14,10 +14,11 @@ interface Cars {
 })
 
 
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   cars: Cars[] = [];
   carName = '';
+  appTitle = '';
   colors = [
     'red',
     'blue',
@@ -34,9 +35,10 @@ export class AppComponent {
   loadCars() {
     this.service
       .getCars()
-      .subscribe((cars: Cars[]) => {
-        this.cars = cars;
-      });
+      .subscribe(
+        (cars: Cars[]) => this.cars = cars,
+        (error) => alert(error)
+      );
   }
 
   addCars() {
@@ -69,5 +71,9 @@ export class AppComponent {
       .subscribe((data) => {
         this.cars = this.cars.filter(item => item.id !== car.id);
       });
+  }
+
+  ngOnInit() {
+    this.appTitle = this.service.getTitle();
   }
 }
