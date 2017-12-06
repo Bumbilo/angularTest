@@ -1,17 +1,17 @@
 <div class="col-xs-8 col-xs-offset-2">
-  <form (ngSubmit)="onSendForm(form)" #form="ngForm">
-    <div ngModelGroup="FIO">
-      <div class="form-group" [ngClass]="{'has-error': first_name.invalid && first_name.touched}">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div formGroupName="user">
+      <div class="form-group">
         <label>First name</label>
         <input
           type="text"
           class="form-control"
           placeholder="First name"
-          ngModel
-          name="first_name"
-          #first_name="ngModel"
-          required
+          formControlName="first_name"
         >
+        <p *ngIf="form.get('user.first_name').invalid && form.get('user.first_name').touched">
+          <span>First name incorrect</span>
+        </p>
       </div>
       <div class="form-group">
         <label>Last name</label>
@@ -19,55 +19,47 @@
           type="text"
           class="form-control"
           placeholder="Last name"
-          ngModel
-          name="last_name"
-          required
+          formControlName="last_name"
         >
+        <p *ngIf="form.get('user.last_name').invalid && form.get('user.last_name').touched"
+        >
+          <span *ngIf="form.get('user.last_name').errors['required']">Last name incorrect</span>
+          <span *ngIf="form.get('user.last_name').errors['lengthError']">Last must be more {{chartsCount}}th letters</span>
+        </p>
       </div>
     </div>
-    <div class="form-group " [ngClass]="{'has-danger': email.invalid && email.touched}">
+    <div class="form-group">
       <label>Email</label>
       <input
         type="email"
         class="form-control"
         placeholder="Email"
-        ngModel
-        name="email"
-        required
-        #email="ngModel"
-        email
+        formControlName="email"
       >
-      <p *ngIf="email.invalid && email.touched">Введите корректный email</p>
+      <p *ngIf="form.get('email').invalid && form.get('email').touched">
+        <span *ngIf="form.get('email').invalid && form.get('email').touched">Email incorrect</span>
+        <span *ngIf="form.get('email').errors['checkForEmail']">Email is Used</span>
+
+      </p>
     </div>
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'has-error': form.get('password').valid && form.get('password').touched}">
       <label>Password</label>
       <input
         type="password"
         class="form-control"
         placeholder="Password"
-        ngModel
-        name="password"
+        formControlName="password"
       >
+      <p *ngIf="form.get('password').valid && form.get('password').touched">Password incorrect</p>
     </div>
-    <!--<div class="form-group">-->
-      <!--<select class="form-control">-->
-        <!--<option-->
-          <!--*ngFor="let count of country"-->
-          <!--[ngModel]="defaultCountry"-->
-          <!--[name]="count.shortName"-->
-        <!--&gt;{{count.name}}-->
-        <!--</option>-->
-      <!--</select>-->
-    <!--</div>-->
     <div class="form-group">
-      <div class="radio" *ngFor="let gen of sex">
-        <label [for]="gen.gender">{{gen.gender}}</label>
+      <div class="radio" *ngFor="let count of country">
+        <label [for]="count.shortName">{{count.name}}</label>
         <input
           type="radio"
-          [id]="gen.gender"
-          [value]="gen.gender"
-          [ngModel]="'male'"
-          name="defaultCountry"
+          [id]="count.shortName"
+          [value]="count.shortName"
+          formControlName="countryes"
         />
       </div>
     </div>
@@ -75,7 +67,7 @@
       <button
         type="submit"
         class="btn btn-primary"
-        [disabled]="!form.valid"
+        [disabled]="form.invalid"
       >Send form
       </button>
     </div>
