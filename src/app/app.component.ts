@@ -47,11 +47,13 @@ export class AppComponent {
     this.carName = '';
   }
 
+  // Method for generate random color from array colors
   getRandColor() {
     const num = Math.round(Math.random() * (this.colors.length - 1));
     return this.colors[num];
   }
 
+  // Method for add new random color for car
   setNewColor(car: Cars) {
     this.service
       .changeColor(car, this.getRandColor())
@@ -60,4 +62,12 @@ export class AppComponent {
       });
   }
 
+  // Method for remove car
+  deleteCar(car: Cars) {
+    this.service
+      .deleteCar(car)
+      .subscribe((data) => {
+        this.cars = this.cars.filter(item => item.id !== car.id);
+      });
+  }
 }

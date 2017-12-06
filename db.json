@@ -1,26 +1,6 @@
 {
   "cars": [
     {
-      "color": "red",
-      "id": 1
-    },
-    {
-      "color": "green",
-      "id": 2
-    },
-    {
-      "color": "green",
-      "id": 3
-    },
-    {
-      "color": "blue",
-      "id": 5
-    },
-    {
-      "color": "red",
-      "id": 7
-    },
-    {
       "name": "Tesla",
       "isSold": "false",
       "color": "grey",
@@ -28,28 +8,23 @@
     },
     {
       "name": "Kalina",
-      "color": "blue",
+      "color": "pink",
       "id": 10
     },
     {
       "name": "BMW",
-      "color": "blue",
+      "color": "tomato",
       "id": 11
     },
     {
       "name": "Audi",
-      "color": "blue",
+      "color": "yellow",
       "id": 12
     },
     {
       "name": "Audi",
-      "color": "blue",
+      "color": "red",
       "id": 13
-    },
-    {
-      "name": "",
-      "color": "blue",
-      "id": 14
     }
   ]
 }

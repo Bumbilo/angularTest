@@ -28,7 +28,16 @@ export class CarsService {
   // Method for change color in current id car
   changeColor(car: any, color: string) {
     car.color = color;
-    return this.http.put(`http://localhost:3000/cars/${car.id}`, car).map((response: Response) => response.json());
+    return this.http
+      .put(`http://localhost:3000/cars/${car.id}`, car)
+      .map((response: Response) => response.json());
+  }
+
+  // Method for remove car from base
+  deleteCar(car: any) {
+    return this.http
+      .delete(`http://localhost:3000/cars/${car.id}`)
+      .map((response: Response) => response.json());
   }
 
 }
