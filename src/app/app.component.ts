@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CarsService} from './cars.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 interface Cars {
   name: string;
@@ -28,7 +29,7 @@ export class AppComponent implements OnInit {
     'grey'
   ];
 
-  constructor(private service: CarsService) {
+  constructor(private service: CarsService, private _router: Router, private _route: ActivatedRoute) {
   }
 
   // Method for get all cars from cars array
@@ -72,6 +73,11 @@ export class AppComponent implements OnInit {
       .subscribe((data) => {
         this.cars = this.cars.filter(item => item.id !== car.id);
       });
+  }
+
+  // Method redirect
+  openCarsPage() {
+    this._router.navigate(['/forms'], {relativeTo: this._route });
   }
 
   ngOnInit() {

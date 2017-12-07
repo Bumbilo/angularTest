@@ -14,6 +14,7 @@ import {ConsoleService} from './console.service';
 import {FomrsComponent} from './fomrs/fomrs.component';
 import {HttpModule} from '@angular/http';
 import {AppRouterModule} from './app-router/app-router.module';
+import { CarPageComponent } from './car-page/car-page.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {AppRouterModule} from './app-router/app-router.module';
     MyDirectiveDirective,
     PowPipePipe,
     CarFilterPipe,
-    FomrsComponent
+    FomrsComponent,
+    CarPageComponent
   ],
   imports: [
     BrowserModule,
