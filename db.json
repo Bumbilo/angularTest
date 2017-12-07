@@ -1,12 +1,6 @@
 {
   "cars": [
     {
-      "name": "Tesla",
-      "isSold": "false",
-      "color": "grey",
-      "id": 9
-    },
-    {
       "name": "Kalina",
       "color": "pink",
       "id": 10
@@ -25,6 +19,11 @@
       "name": "Audi",
       "color": "red",
       "id": 13
+    },
+    {
+      "name": "sdfasdf",
+      "color": "blue",
+      "id": 14
     }
   ],
   "title": {

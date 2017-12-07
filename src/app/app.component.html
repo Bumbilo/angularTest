@@ -1,17 +1,31 @@
 <!--<div class="container">-->
-  <!--<div class="col-xs-8 col-xs-offset2">-->
-    <!--&lt;!&ndash;<button class="btn btn-primary" (click)="loadCars()">Add cars</button>&ndash;&gt;-->
-    <!--&lt;!&ndash;<hr/>&ndash;&gt;-->
-    <!--&lt;!&ndash;<ul>&ndash;&gt;-->
-      <!--&lt;!&ndash;<li *ngFor="let car of cars">{{car.name}}</li>&ndash;&gt;-->
-    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
-    <!--&lt;!&ndash;<app-fomrs></app-fomrs>&ndash;&gt;-->
-    <!--&lt;!&ndash;<app-add-car ></app-add-car>&ndash;&gt;-->
-    <!--&lt;!&ndash;<ul class="list-group">&ndash;&gt;-->
-      <!--&lt;!&ndash;<app-car *ngFor="let car of cars" [carItem]="car"  ></app-car>&ndash;&gt;-->
-    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
-  <!--</div>-->
+<!--<div class="col-xs-8 col-xs-offset2">-->
+<!--&lt;!&ndash;<button class="btn btn-primary" (click)="loadCars()">Add cars</button>&ndash;&gt;-->
+<!--&lt;!&ndash;<hr/>&ndash;&gt;-->
+<!--&lt;!&ndash;<ul>&ndash;&gt;-->
+<!--&lt;!&ndash;<li *ngFor="let car of cars">{{car.name}}</li>&ndash;&gt;-->
+<!--&lt;!&ndash;</ul>&ndash;&gt;-->
+<!--&lt;!&ndash;<app-fomrs></app-fomrs>&ndash;&gt;-->
+<!--&lt;!&ndash;<app-add-car ></app-add-car>&ndash;&gt;-->
+<!--&lt;!&ndash;<ul class="list-group">&ndash;&gt;-->
+<!--&lt;!&ndash;<app-car *ngFor="let car of cars" [carItem]="car"  ></app-car>&ndash;&gt;-->
+<!--&lt;!&ndash;</ul>&ndash;&gt;-->
 <!--</div>-->
+<!--</div>-->
+
+<ul class="nav">
+  <li class="nav-item" routerLinkActive="active" >
+    <a class="nav-link active" routerLink="/">Home</a>
+  </li>
+  <li class="nav-item" routerLinkActive="active">
+    <a class="nav-link" routerLink="/cars">Cars</a>
+  </li>
+  <li class="nav-item" routerLinkActive="active">
+    <a class="nav-link" routerLink="/forms">Forms</a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>
 
 <div class="col-xs-8 col-xs-offset-2">
   <h1>{{appTitle | async}}</h1>
@@ -23,7 +37,7 @@
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let car of cars">
       <span class="badge" [ngStyle]="{background: car.color}">
-        {{car.id}}
+        <!--{{car.id}}-->
       </span>
       {{car.name}}
       <button class="btn btn-xs btn-info" (click)="setNewColor(car)">Change color</button>

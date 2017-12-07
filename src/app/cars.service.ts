@@ -14,7 +14,7 @@ export class CarsService {
     });
 
     return this.http
-      .get('http://localhost:3100/cars', {
+      .get('http://localhost:3000/cars', {
         headers: header
       })
       .map((response: Response) => response.json())

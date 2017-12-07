@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CarsService} from './cars.service';
 
 interface Cars {
@@ -12,7 +12,6 @@ interface Cars {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-
 
 export class AppComponent implements OnInit {
 
@@ -32,6 +31,7 @@ export class AppComponent implements OnInit {
   constructor(private service: CarsService) {
   }
 
+  // Method for get all cars from cars array
   loadCars() {
     this.service
       .getCars()
@@ -41,6 +41,7 @@ export class AppComponent implements OnInit {
       );
   }
 
+  // Method for add new car in cars array
   addCars() {
     this.service
       .addCar(this.carName)
@@ -74,6 +75,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Get title App from server
     this.appTitle = this.service.getTitle();
   }
 }

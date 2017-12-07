@@ -17,8 +17,6 @@ export class FomrsComponent implements OnInit {
     {name: 'Belorusia', shortName: 'bel'},
   ];
 
-  defaultCountry = 'ua';
-
   form: FormGroup;
 
   ngOnInit() {
@@ -35,14 +33,12 @@ export class FomrsComponent implements OnInit {
 
   chartsCount = 5;
 
-  // {''}
-  // null undefined
   checkForLength = (control: FormControl) => {
     if (control.value.length <= this.chartsCount) {
       return {'lengthError': true};
     }
     return null;
-  };
+  }
 
   checkForEmail = (control: FormControl): Promise<any> => {
     return new Promise((resolve, reject) => {
@@ -56,7 +52,7 @@ export class FomrsComponent implements OnInit {
         }
       }, 3000);
     });
-  };
+  }
 
   onSubmit() {
     console.log('submited!!', this.form);
