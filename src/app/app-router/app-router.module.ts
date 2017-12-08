@@ -9,7 +9,6 @@ import {AuthGuard} from '../auth-guard.service';
 
 const appRoutes: Routes = [
   {path: '', component: CarsComponent},
-  {path: 'cars', component: CarsComponent, canActivate: [AuthGuard], children: [{path: ':id/:name', component: CarPageComponent}]},
   {path: 'forms', component: FomrsComponent},
   {path: 'not-found', component: NotFoundComponent},
   {path: '**', redirectTo: 'not-found'}
