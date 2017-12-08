@@ -10,14 +10,14 @@ import {
 })
 export class CarsComponent {
 
-  cars: [{ name: string, year: number }] = [
-    {name: 'Ford', year: 2015, id: 1},
-    {name: 'Audi', year: 2010, id: 3},
-    {name: 'Toyota', year: 2012, id: 4},
-    {name: 'BMw', year: 2017, id: 6},
-    {name: 'Mustang', year: 2012, id: 8},
-    {name: 'Lada', year: 2015, id: 10},
-    {name: 'Bently', year: 2014 id: 14}
+  cars: [{ name: string, year: number, color: string, id: number }] = [
+    {name: 'Ford', year: 2015, id: 1, color: 'red'},
+    {name: 'Audi', year: 2010, id: 3, color: 'red'},
+    {name: 'Toyota', year: 2012, id: 4, color: 'red'},
+    {name: 'BMw', year: 2017, id: 6, color: 'red'},
+    {name: 'Mustang', year: 2012, id: 8, color: 'red'},
+    {name: 'Lada', year: 2015, id: 10, color: 'red'},
+    {name: 'Bently', year: 2014, id: 14, color: 'red'}
   ];
 
   constructor() {

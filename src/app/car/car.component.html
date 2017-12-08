@@ -1,6 +1,11 @@
 <li [ngClass]="getClass()">
   <h5 class="list-group-item-heading">Car name: {{car.name}}</h5>
-  <a [routerLink]="['/cars', car.id, car.name]">Link on car page {{car.id}}</a>
+  <a
+    [routerLink]="['/cars', car.id, car.name]"
+    [queryParams]="{year: car.year, color: car.color}"
+    [fragment]="'pic'"
+  >
+    Link on car page {{car.id}}</a>
   <button class="btn btn-primary" [disabled]="car.isSold" (click)="onAction('buy')">Buy</button>
   <button class="btn" [disabled]="!car.isSold" (click)="onAction('sell')">Back</button>
 </li>

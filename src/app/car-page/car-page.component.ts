@@ -7,23 +7,30 @@ import {ActivatedRoute, Params} from '@angular/router';
   styleUrls: ['./car-page.component.css']
 })
 export class CarPageComponent implements OnInit {
-  id: string;
+  id: number;
   name: string;
+  color: string;
+  year: string;
+  hash: string;
 
   constructor(private _route: ActivatedRoute) {
   }
 
   ngOnInit() {
-   // this.id = this._route.snapshot.params.id;
-   // this.name = this._route.snapshot.params.name;
+    this.id = +this._route.snapshot.params.id;
+    // this.color = this._route.snapshot.queryParams.color;
+    // this.year = this._route.snapshot.queryParams.year;
+    this.hash = this._route.snapshot.queryParams.fragment;
 
-   this._route.params.subscribe((params: Params) => {
+    this._route.params.subscribe((params: Params) => {
       console.log(params);
-      this.id = params.id;
+      this.id = +params.id;
       this.name = params.name;
-   });
-   console.log(this.id, this.name);
+    });
 
+    this._route.queryParams.subscribe((params: Params) => {
+      this.color = params.color;
+      this.year = params.year;
+    });
   }
-
 }
