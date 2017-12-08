@@ -1,15 +1,15 @@
-  <div class="row">
-    <div class="col-md-6">
-      <p>Form for add car</p>
-      <app-add-car (emmitCar)="updateCarList($event)"></app-add-car>
-      <hr/>
-      <div class="list-group">
-        <app-car class="list-group-item" *ngFor="let car of cars" [carItem]="car">
-          <div class="alert alert-info">This car is sold!!!</div>
-        </app-car>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <router-outlet></router-outlet>
+<div class="row">
+  <div class="col-md-6">
+    <p>Form for add car</p>
+    <app-add-car (emmitCar)="updateCarList($event)"></app-add-car>
+    <hr/>
+    <div class="list-group">
+      <app-car class="list-group-item" *ngFor="let car of cars" [carItem]="car">
+        <div class="alert alert-info">This car is sold!!!</div>
+      </app-car>
     </div>
   </div>
+  <div class="col-md-6">
+    <router-outlet></router-outlet>
+  </div>
+</div>

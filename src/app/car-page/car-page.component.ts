@@ -6,6 +6,7 @@ import {ActivatedRoute, Params} from '@angular/router';
   templateUrl: './car-page.component.html',
   styleUrls: ['./car-page.component.css']
 })
+
 export class CarPageComponent implements OnInit {
   id: number;
   name: string;

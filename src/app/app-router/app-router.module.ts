@@ -4,13 +4,15 @@ import {RouterModule, Routes} from '@angular/router';
 import {CarsComponent} from '../cars/cars.component';
 import {FomrsComponent} from '../fomrs/fomrs.component';
 import {CarPageComponent} from '../car-page/car-page.component';
+import {NotFoundComponent} from '../not-found/not-found.component';
+import {AuthGuard} from '../auth-guard.service';
 
 const appRoutes: Routes = [
   {path: '', component: CarsComponent},
-  {path: 'cars', component: CarsComponent, children: [
-      {path: ':id/:name', component: CarPageComponent}
-    ]},
+  {path: 'cars', component: CarsComponent, canActivate: [AuthGuard], children: [{path: ':id/:name', component: CarPageComponent}]},
   {path: 'forms', component: FomrsComponent},
+  {path: 'not-found', component: NotFoundComponent},
+  {path: '**', redirectTo: 'not-found'}
 ];
 
 @NgModule({

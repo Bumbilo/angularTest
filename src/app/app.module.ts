@@ -14,7 +14,10 @@ import {ConsoleService} from './console.service';
 import {FomrsComponent} from './fomrs/fomrs.component';
 import {HttpModule} from '@angular/http';
 import {AppRouterModule} from './app-router/app-router.module';
-import { CarPageComponent } from './car-page/car-page.component';
+import {CarPageComponent} from './car-page/car-page.component';
+import {NotFoundComponent} from './not-found/not-found.component';
+import {AuthService} from './auth.service';
+import {AuthGuard} from './auth-guard.service';
 
 
 @NgModule({
@@ -28,16 +31,17 @@ import { CarPageComponent } from './car-page/car-page.component';
     PowPipePipe,
     CarFilterPipe,
     FomrsComponent,
-    CarPageComponent
+    CarPageComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    AppRouterModule
+    AppRouterModule,
   ],
-  providers: [CarsService, ConsoleService],
+  providers: [CarsService, ConsoleService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

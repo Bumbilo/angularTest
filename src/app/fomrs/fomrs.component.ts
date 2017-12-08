@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
+import {AuthService} from '../auth.service';
 
 @Component({
   selector: 'app-fomrs',
@@ -8,7 +9,7 @@ import {FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
 })
 export class FomrsComponent implements OnInit {
 
-  constructor() {
+  constructor(private _auth: AuthService) {
   }
 
   country = [
@@ -38,7 +39,7 @@ export class FomrsComponent implements OnInit {
       return {'lengthError': true};
     }
     return null;
-  }
+  };
 
   checkForEmail = (control: FormControl): Promise<any> => {
     return new Promise((resolve, reject) => {
@@ -52,10 +53,18 @@ export class FomrsComponent implements OnInit {
         }
       }, 3000);
     });
-  }
+  };
 
   onSubmit() {
     console.log('submited!!', this.form);
+  }
+
+  changeRules(status) {
+    if (status === 'login') {
+      this._auth.logIn();
+    } else {
+      this._auth.logOut();
+    }
   }
 
 }
