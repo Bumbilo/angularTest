@@ -1,16 +1,13 @@
 <div class="col-xs-8 col-xs-offset-2">
-  <form (ngSubmit)="onSendForm(form)" #form="ngForm">
-    <div ngModelGroup="FIO">
-      <div class="form-group" [ngClass]="{'has-error': first_name.invalid && first_name.touched}">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <div class="form-group" >
         <label>First name</label>
         <input
           type="text"
           class="form-control"
           placeholder="First name"
-          ngModel
-          name="first_name"
-          #first_name="ngModel"
-          required
+          formControlName="first_name"
         >
       </div>
       <div class="form-group">
@@ -19,25 +16,19 @@
           type="text"
           class="form-control"
           placeholder="Last name"
-          ngModel
-          name="last_name"
-          required
+          formControlName="last_name"
         >
       </div>
     </div>
-    <div class="form-group " [ngClass]="{'has-danger': email.invalid && email.touched}">
+    <div class="form-group ">
       <label>Email</label>
       <input
         type="email"
         class="form-control"
         placeholder="Email"
-        ngModel
-        name="email"
-        required
-        #email="ngModel"
-        email
+        formControlName="email"
       >
-      <p *ngIf="email.invalid && email.touched">Введите корректный email</p>
+      <p>Введите корректный email</p>
     </div>
     <div class="form-group">
       <label>Password</label>
@@ -45,8 +36,7 @@
         type="password"
         class="form-control"
         placeholder="Password"
-        ngModel
-        name="password"
+        formControlName="password"
       >
     </div>
     <!--<div class="form-group">-->
@@ -65,9 +55,8 @@
         <input
           type="radio"
           [id]="gen.gender"
+          formControlName="sex"
           [value]="gen.gender"
-          [ngModel]="'male'"
-          name="defaultCountry"
         />
       </div>
     </div>
@@ -75,8 +64,8 @@
       <button
         type="submit"
         class="btn btn-primary"
-        [disabled]="!form.valid"
       >Send form
+
       </button>
     </div>
   </form>

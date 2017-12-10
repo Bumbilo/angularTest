@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CarComponent } from './car/car.component';
 import { CarsComponent } from './cars/cars.component';
@@ -27,7 +27,8 @@ import { FomrsComponent } from './fomrs/fomrs.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [CarsService, ConsoleService],
   bootstrap: [AppComponent]

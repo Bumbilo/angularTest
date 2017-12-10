@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {NgForm} from '@angular/forms';
+import {FormControl, FormGroup, NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-fomrs',
@@ -7,28 +7,27 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./fomrs.component.css']
 })
 export class FomrsComponent implements OnInit {
-
   constructor() {
   }
-
-  ngOnInit() {
-  }
-
-  country = [
-    {name: 'Russia', shortName: 'rus'},
-    {name: 'Ukraine', shortName: 'ua'},
-    {name: 'Belorusia', shortName: 'bel'},
-  ];
-
-  defaultCountry = 'ua';
 
   sex = [
     {gender: 'male'},
     {gender: 'flame'}
   ];
 
-  onSendForm(value: HTMLFormElement) {
-    console.log(value);
+  form: FormGroup;
+
+  ngOnInit() {
+    this.form = new FormGroup({
+      first_name: new FormControl(''),
+      last_name: new FormControl(''),
+      email: new FormControl(''),
+      password: new FormControl(''),
+      sex: new FormControl('male')
+    });
   }
 
+  onSubmit() {
+    console.log('submited', this.form)
+  }
 }
