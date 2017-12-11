@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { CarsModule } from './cars-page/cars.module';
 import { SharedModule } from './shared/shared.module';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SharedModule } from './shared/shared.module';
     HttpModule,
     AppRoutingModule,
     CarsModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
