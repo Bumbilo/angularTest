@@ -4,27 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { AppRoutingModule } from './app-routing.module';
-import { HeaderComponent } from './header/header.component';
-import { CarsModule } from './cars-page/cars.module';
-import { SharedModule } from './shared/shared.module';
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomePageComponent,
-    HeaderComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
-    AppRoutingModule,
-    CarsModule,
-    SharedModule,
-    BrowserAnimationsModule
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
