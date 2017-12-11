@@ -1,5 +1,0 @@
-<li [ngClass]="getClass()">
-  <h5 class="list-group-item-heading">Car name: {{car.name}}</h5>
-  <button class="btn btn-primary" [disabled]="car.isSold" (click)="onAction('buy')">Buy</button>
-  <button class="btn" [disabled]="!car.isSold" (click)="onAction('sell')">Back</button>
-</li>

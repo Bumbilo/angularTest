@@ -1,10 +1,8 @@
 <div class="container">
-  <div class="col-xs-8 col-xs-offset2">
-    <app-fomrs></app-fomrs>
-    <!--<app-add-car ></app-add-car>-->
-    <!--<ul class="list-group">-->
-      <!--<app-car *ngFor="let car of cars" [carItem]="car"  ></app-car>-->
-    <!--</ul>-->
+  <app-header></app-header>
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>
-

@@ -1,0 +1,32 @@
+{
+  "cars": [
+    {
+      "name": "Kalina",
+      "color": "pink",
+      "id": 10
+    },
+    {
+      "name": "BMW",
+      "color": "tomato",
+      "id": 11
+    },
+    {
+      "name": "Audi",
+      "color": "yellow",
+      "id": 12
+    },
+    {
+      "name": "Audi",
+      "color": "red",
+      "id": 13
+    },
+    {
+      "name": "sdfasdf",
+      "color": "blue",
+      "id": 14
+    }
+  ],
+  "title": {
+    "value": "Car manager"
+  }
+}
