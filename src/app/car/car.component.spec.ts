@@ -15,6 +15,7 @@ describe('CarComponent', () => {
     component = fixture.debugElement.componentInstance;
   });
 
+  // Test component should created
   it('should crate component instance', () => {
     expect(component).toBeTruthy();
   });
@@ -34,9 +35,24 @@ describe('CarComponent', () => {
     expect(component.isCarVisible).toEqual(carService.getVisibility());
   });
 
+  // Test service method showCar()
   it(`Should display car if is visible`, () => {
     const carService = fixture.debugElement.injector.get(CarService);
+    carService.showCar();
+    fixture.detectChanges();
+    const nativeElement = fixture.debugElement.nativeElement;
+    const text = nativeElement.querySelector('span').textContent;
+    expect(text).toEqual('Car is visible');
+  });
 
+  // Test service method hideCar()
+  it(`Shouldn't display car if isn't visible`, () => {
+    const carService = fixture.debugElement.injector.get(CarService);
+    carService.hideCar();
+    fixture.detectChanges();
+    const nativeElement = fixture.debugElement.nativeElement;
+    const text = nativeElement.querySelector('span').textContent;
+    expect(text).not.toEqual('Car is visible');
   });
 
 });
