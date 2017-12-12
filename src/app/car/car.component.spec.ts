@@ -1,7 +1,7 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {CarComponent} from './car.component';
-import {CarService} from './car.service';
-import {Observable} from 'rxjs/Observable';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { CarComponent } from './car.component';
+import { CarService } from './car.service';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 
 describe('CarComponent', () => {
@@ -63,7 +63,7 @@ describe('CarComponent', () => {
     expect(component.carName).toBe(undefined);
   });
 
-  // Test method getCarName should be unasync
+  // Test method getCarName should be not async
   it(`Should get car name is async`, async(() => {
     spyOn(carService, 'getCarName').and.returnValue(Observable.of('testCar').delay(100));
     fixture.detectChanges();
@@ -71,5 +71,7 @@ describe('CarComponent', () => {
       expect(component.carName).toEqual('testCar');
     });
   }));
+
+
 
 });
